@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Redirige todas las solicitudes a la carpeta testeando
+RewriteCond %{REQUEST_URI} !^/testeando/
+RewriteRule ^(.*)$ /testeando/$1 [L]
+
+# Mantiene la URL fija en la raíz
+RewriteRule ^testeando/(.*)$ /$1 [L,QSA]
